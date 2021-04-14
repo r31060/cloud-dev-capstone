@@ -32,19 +32,19 @@ Data returned:
   "items": [
     {
       "itemId": "123",
-      "createdAt": "2020-06-27T20:01:45.424Z",
+      "createdAt": "2021-04-14T14:00:32Z",
       "name": "Take out the trash",
-      "dueDate": "2020-07-01T20:01:45.424Z",
+      "dueDate": "2021-04-14T14:00:32Z",
       "done": false,
-      "attachmentUrl": "http://example.com/image.png"
+      "attachmentUrl": "http://myimage.com/image.png"
     },
     {
       "itemId": "456",
-      "createdAt": "2020-06-28T20:01:45.424Z",
+      "createdAt": "2021-04-14T14:00:32Z",
       "name": "Clean your room",
-      "dueDate": "2020-07-02T20:01:45.424Z",
+      "dueDate": "2021-04-14T14:00:32Z",
       "done": true,
-      "attachmentUrl": "http://example.com/image.png"
+      "attachmentUrl": "http://myimage.com/image.png"
     },
   ]
 }
@@ -56,11 +56,11 @@ It receives a new item to be created in JSON format that looks like this:
 
 ```json
 {
-  "createdAt": "2020-06-27T20:01:45.424Z",
+  "createdAt": "2021-04-14T14:02:46Z",
   "name": "Take out the trash",
-  "dueDate": "2020-07-01T20:01:45.424Z",
+  "dueDate": "2021-04-14T14:02:46Z",
   "done": false,
-  "attachmentUrl": "http://example.com/image.png"
+  "attachmentUrl": "http://myimage.com/image.png"
 }
 ```
 
@@ -70,11 +70,11 @@ It returns a new item that looks like this:
 {
   "item": {
     "itemId": "123",
-    "createdAt": "2020-07-01T20:01:45.424Z",
+    "createdAt": "2021-04-14T14:02:46Z",
     "name": "Take out the trash",
-    "dueDate": "2020-07-01T20:01:45.424Z",
+    "dueDate": "2021-04-14T14:02:46Z",
     "done": false,
-    "attachmentUrl": "http://example.com/image.png"
+    "attachmentUrl": "http://myimage.com/image.png"
   }
 }
 ```
@@ -86,7 +86,7 @@ It receives an object that contains three fields that can be updated in an item:
 ```json
 {
   "name": "Feed the dog",
-  "dueDate": "2020-06-29T20:01:45.424Z",
+  "dueDate": "2021-04-14T14:02:46Z",
   "done": true
 }
 ```
@@ -105,7 +105,7 @@ It should return a JSON object that looks like this:
 
 ```json
 {
-  "uploadUrl": "https://s3-bucket-name.s3.eu-west-2.amazonaws.com/image.png"
+  "uploadUrl": "https://s3-bucket-name.s3.us-west-2.amazonaws.com/image.png"
 }
 ```
 
@@ -118,7 +118,7 @@ This frontend works with the serverless application.
 
 ```ts
 const apiId = '...' API Gateway id
-export const apiEndpoint = `https://${apiId}.execute-api.us-east-1.amazonaws.com/dev`
+export const apiEndpoint = `https://${apiId}.execute-api.us-west-2.amazonaws.com/dev`
 
 export const authConfig = {
   domain: '...',    // Domain from Auth0
