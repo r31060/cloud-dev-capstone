@@ -1,5 +1,5 @@
 export interface Todo {
-  itemId: string
+  todoId: string
   createdAt: string
   name: string
   dueDate: string
