@@ -168,16 +168,19 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
                   checked={todo.done}
                 />
               </Grid.Column>
-              <Grid.Column width={4}>
+              <Grid.Column width={3}>
                 {todo.name}
               </Grid.Column>
               <Grid.Column width={3}>
-                {todo.dueDate}
+                {todo.createdAt}
               </Grid.Column>
               <Grid.Column width={3}>
+                {todo.frequency}
+              </Grid.Column>
+              <Grid.Column width={1}>
                 {todo.credit}
               </Grid.Column>
-              <Grid.Column width={3}>
+              <Grid.Column width={1}>
                 {todo.rating}
               </Grid.Column>
               <Grid.Column width={1} floated="right">

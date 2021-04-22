@@ -3,4 +3,6 @@ export interface TodoUpdate {
   dueDate: string
   done: boolean
   rating: string
+  credit: string
+  frequency: string
 }

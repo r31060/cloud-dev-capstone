@@ -16,6 +16,10 @@ The app stores chores with the following fields:
 * `dueDate` (string) - date and time by which an item should be bought
 * `done` (boolean) - true if an item was bought, false otherwise
 * `attachmentUrl` (string) (optional) - a URL pointing to an image attached to an item
+* `frequency` (string) - how often the chore should be done
+* `credit` (string) - how much allowance the chore is worth
+* `rating` (string) - rating of the chore
+
 
 # Functions
 
@@ -36,7 +40,10 @@ Data returned:
       "name": "Take out the trash",
       "dueDate": "2021-04-14T14:00:32Z",
       "done": false,
-      "attachmentUrl": "http://myimage.com/image.png"
+      "attachmentUrl": "http://myimage.com/image.png",
+      "freqency": "Daily",
+      "credit": "$1.00",
+      "rating": "5 / 5"
     },
     {
       "itemId": "456",
@@ -44,7 +51,10 @@ Data returned:
       "name": "Clean your room",
       "dueDate": "2021-04-14T14:00:32Z",
       "done": true,
-      "attachmentUrl": "http://myimage.com/image.png"
+      "attachmentUrl": "http://myimage.com/image.png",
+      "freqency": "Daily",
+      "credit": "$1.00",
+      "rating": "5 / 5"
     },
   ]
 }
@@ -60,7 +70,10 @@ It receives a new item to be created in JSON format that looks like this:
   "name": "Take out the trash",
   "dueDate": "2021-04-14T14:02:46Z",
   "done": false,
-  "attachmentUrl": "http://myimage.com/image.png"
+  "attachmentUrl": "http://myimage.com/image.png",
+  "freqency": "Daily",
+  "credit": "$1.00",
+  "rating": "5 / 5"
 }
 ```
 
@@ -74,7 +87,10 @@ It returns a new item that looks like this:
     "name": "Take out the trash",
     "dueDate": "2021-04-14T14:02:46Z",
     "done": false,
-    "attachmentUrl": "http://myimage.com/image.png"
+    "attachmentUrl": "http://myimage.com/image.png",
+    "freqency": "Daily",
+    "credit": "$1.00",
+    "rating": "5 / 5"
   }
 }
 ```
