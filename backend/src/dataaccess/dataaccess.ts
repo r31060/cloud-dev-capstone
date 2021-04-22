@@ -17,7 +17,7 @@ export const GetItemsForUserId=async (uId:string)=>{
         ExpressionAttributeValues:{
           ":id":uId
         },
-        "ProjectionExpression": "todoId,attachmentUrl,dueDate,createdAt,#todoName,done"
+        "ProjectionExpression": "todoId,attachmentUrl,dueDate,createdAt,#todoName,done,rating"
     };
     let data=[]
     try {
@@ -37,8 +37,10 @@ export const AddItem=async (userId:string,item:any)=>{
           todoId: `${uuid()}`,
           createdAt: new Date().toDateString(),
           ...item,
-          done: true,
-          attachmentUrl: ""
+          done: false,
+          attachmentUrl: "",
+          rating: "5 / 5",
+          credit: "$1.00"
         }
     };
     try{

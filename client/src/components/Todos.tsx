@@ -162,17 +162,23 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
         {this.state.todos.map((todo, pos) => {
           return (
             <Grid.Row key={todo.todoId}>
-              <Grid.Column width={1} verticalAlign="middle">
+              <Grid.Column width={1}>
                 <Checkbox
                   onChange={() => this.onTodoCheck(pos)}
                   checked={todo.done}
                 />
               </Grid.Column>
-              <Grid.Column width={10} verticalAlign="middle">
+              <Grid.Column width={4}>
                 {todo.name}
               </Grid.Column>
-              <Grid.Column width={3} floated="right">
+              <Grid.Column width={3}>
                 {todo.dueDate}
+              </Grid.Column>
+              <Grid.Column width={3}>
+                {todo.credit}
+              </Grid.Column>
+              <Grid.Column width={3}>
+                {todo.rating}
               </Grid.Column>
               <Grid.Column width={1} floated="right">
                 <Button

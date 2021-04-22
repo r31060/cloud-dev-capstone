@@ -3,6 +3,8 @@ export interface Todo {
   createdAt: string
   name: string
   dueDate: string
+  rating: string
+  credit: string
   done: boolean
   attachmentUrl?: string
 }
