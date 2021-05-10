@@ -48,7 +48,7 @@ functions:
     handler: src/lambda/auth/auth0Authorizer.handler
 
   streamFunction:
-    handler: src/lambda/publishNewChore.handler
+    handler: publishNewChore.handler
     events:
       - stream: arn:aws:dynamodb:us-west-2:534199652943:table/todos-dev/stream/2021-05-01T15:03:55.063
   
