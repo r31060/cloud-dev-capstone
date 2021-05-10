@@ -46,13 +46,14 @@ functions:
 
   Auth:
     handler: src/lambda/auth/auth0Authorizer.handler
-
+  
+  # SNS Stream Function
   streamFunction:
     handler: src/lambda/publishNewChore.handler
     events:
       - stream: arn:aws:dynamodb:us-west-2:534199652943:table/todos-dev/stream/2021-05-01T15:03:55.063
   
-  # TODO: Configure GET function
+  # GET function
   GetTodos:
     handler: src/lambda/http/getTodos.handler
     iamRoleStatements:
@@ -71,7 +72,7 @@ functions:
           path: todos
           authorizer: Auth
           cors: true
-  # TODO: Configure CREATE function
+  # CREATE function
   CreateTodo:
     handler: src/lambda/http/createTodo.handler
     iamRoleStatements:
@@ -92,7 +93,7 @@ functions:
             schema:
               application/json: ${file(src/validators/createToDo.json)}
 
-  # TODO: Configure UPDATE function
+  # UPDATE function
   UpdateTodo:
     handler: src/lambda/http/updateTodo.handler
     iamRoleStatements:
@@ -115,7 +116,7 @@ functions:
             schema:
               application/json: ${file(src/validators/updateToDo.json)}
 
-  # TODO: Configure DELETE function
+  # DELETE function
   DeleteTodo:
     handler: src/lambda/http/deleteTodo.handler
     iamRoleStatements:
@@ -135,7 +136,7 @@ functions:
             headers: '*'
           authorizer: Auth
 
-  # TODO: Configure UPLOAD URL function
+  # UPLOAD URL function
   GenerateUploadUrl:
     handler: src/lambda/http/generateUploadUrl.handler
     iamRoleStatements:
